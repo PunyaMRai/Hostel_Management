@@ -1,0 +1,114 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Hidden class for switching between screens */
+.hidden {
+    display: none;
+}
+
+.screen {
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#meeting-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+#video-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+video {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 8px;
+    background-color: black;
+}
+
+#local-video {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 120px;
+    height: 90px;
+    border: 2px solid white;
+    border-radius: 8px;
+}
+
+#controls {
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#chat-container {
+    margin-top: 20px;
+    width: 100%;
+}
+
+#chat-messages {
+    max-height: 200px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+#chat-input {
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#send-chat {
+    padding: 10px 15px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#send-chat:hover {
+    background-color: #218838;
+}

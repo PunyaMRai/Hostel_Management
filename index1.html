@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration</title>
+    <style>
+        /* General Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #e9f5f5, #c2e0e0);
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        /* Header Styling */
+        header {
+            background-color: #008080; /* Teal */
+            color: white;
+            text-align: center;
+            padding: 1.5em 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+            font-weight: 300;
+        }
+        /* Navigation Bar Styling */
+        nav {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap; /* Allow wrapping for smaller screens */
+        }
+        nav a, .go-back-button {
+            text-decoration: none;
+            color: #008080;
+            padding: 10px 20px;
+            border: 1px solid #008080;
+            border-radius: 25px;
+            transition: background-color 0.3s, color 0.3s;
+            font-weight: 500;
+        }
+        nav a:hover, .go-back-button:hover {
+            background-color: #008080;
+            color: white;
+        }
+        /* Main Section Styling */
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 0 20px;
+        }
+        .section {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            max-width: 100%;
+            text-align: center;
+        }
+        .section h2 {
+            color: #4CAF50;
+            margin-top: 0;
+            font-size: 1.5em;
+        }
+        .section p {
+            font-size: 0.95em;
+            color: #666;
+            line-height: 1.5;
+        }
+        /* Button Styling */
+        .button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 500;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+        a {
+            text-decoration: none;
+        }
+        .button:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+        }
+        .go-back-button {
+            margin: 10px;
+            display: inline-block;
+        }
+        /* Navigation Bar Styling */
+nav {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Welcome, Admin</h1>
+    </header>
+
+    <!-- Go Back Button -->
+    
+
+    <!-- Navigation Links -->
+   <!-- Navigation Links -->
+<nav>
+    <a href="index1.html" class="go-back-button" title="Return to Welcome Page">Dashboard</a>
+   
+    <a href="emergency.php" class="go-back-button" title="Return to Welcome Page">Emergency</a>
+    <a href="update.php" class="go-back-button" title="Return to Welcome Page">Updates</a>
+    
+    <a href="hostelreport.php" class="go-back-button" title="Return to Welcome Page">Report</a>
+    <a href="video.html" class="go-back-button" title="Return to Welcome Page">Start Meeting</a>
+    <a href="welcome.html" class="go-back-button" title="Return to Welcome Page">Logout</a>
+    
+    <script>
+        window.embeddedChatbotConfig = {
+            chatbotId: "aMf5zj0Jbu1mDoA2mqYrV",
+            domain: "www.chatbase.co"
+        }
+    </script>
+    <script
+        src="https://www.chatbase.co/embed.min.js"
+        chatbotId="aMf5zj0Jbu1mDoA2mqYrV"
+        domain="www.chatbase.co"
+        defer>
+    </script>
+</nav>
+
+    
+    <!-- Main Content Section -->
+    <main>
+        <div class="section">
+            <h2>Student Management</h2>
+            <p>View, add, student details in the hostel.</p>
+            <a href="add_student.php">
+                <button class="button">Add New Student</button>
+            </a>
+            <a href="view_students.php">
+                <button class="button">View Student List</button>
+            </a>
+            <a href="view_attendence.php">
+                <button class="button">View Student Attendance</button>
+            </a>
+        </div>
+
+        <div class="section">
+            <h2>Room Management</h2>
+            <p>Manage room allocation and availability in the hostel.</p>
+            <a href="add_room.php">
+                <button class="button">Add New Room</button>
+            </a>
+            <a href="view_roomsforstudent.php">
+                <button class="button">View Room List</button>
+            </a>
+            <a href="view_payments.php">
+                <button class="button">View Payments</button>
+            </a>
+        </div>
+
+        <div class="section">
+            <h2>Other Services</h2>
+            <p>Check Special Menu, view feedback, and more.</p>
+            <a href="add_menu_item.php">
+                <button class="button">Add New Special Menu Item</button>
+            </a>
+            <a href="view_menu.php">
+                <button class="button">View Special Menu</button>
+            </a>
+            <a href="view_feedback.php">
+                <button class="button">View Feedback</button>
+            </a>
+            <a href="manage_laundry.php">
+                <button class="button">Manage Laundry Bookings</button>
+            </a>
+        </div>
+
+        <div class="section">
+            <h2>Food Management</h2>
+            <p>Check  Menu, view regular menu, and more.</p>
+            <a href="add_notspl_menu.php">
+                <button class="button">Add Regular Menu</button>
+            </a>
+            <a href="view_regularmenu.php">
+                <button class="button">View Regular Menu</button>
+            </a>
+        </div>
+    </main>
+</body>
+</html>

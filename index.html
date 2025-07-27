@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Management System</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        /* Header */
+        header {
+            background-color: #008080; /* Teal */
+            color: white;
+            text-align: center;
+            width: 100%;
+            padding: 1.5em 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            font-size: 2em;
+            letter-spacing: 1px;
+        }
+
+        /* Navigation */
+        nav {
+            margin-top: 20px;
+            width: 80%;
+            display: flex;
+            justify-content: space-around;
+            background-color: #ecf0f1;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 20px;
+            font-weight: 500;
+            transition: background-color 0.3s, color 0.3s;
+            border-radius: 4px;
+        }
+        nav a:hover {
+            background-color: #008080; /* Teal */
+            color: #ecf0f1;
+        }
+
+        /* Main Section */
+        main {
+            width: 80%;
+            margin: 30px 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .section h2 {
+            font-size: 1.5em;
+            color: #4CAF50;
+            margin-bottom: 0.5em;
+        }
+        .section p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1em;
+        }
+
+        /* Buttons */
+        .button {
+            padding: 12px 0;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            text-align: center;
+            width: 100%;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #008080; /* Teal */
+        }
+        #paymentModal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        #paymentModal .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            width: 40%;
+            max-width: 500px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            animation: fadeIn 0.5s;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+    </style>
+     
+     
+</head>
+<body>
+    <header>
+        <h1>Welcome, Student!</h1>
+    </header>
+    
+    <nav>
+        <a href="#">Dashboard</a>
+        <a href="emergencyforstu.php" class="go-back-button" title="Return to Welcome Page">Emergency</a>
+        <a href="updateforstu.php" class="go-back-button" title="Return to Welcome Page">Updates</a>
+        <a href="hostelreportforstu.php" class="go-back-button" title="Return to Welcome Page">Report</a>
+        <a href="video.html" class="go-back-button" title="Return to Welcome Page">Join a meeting</a>
+        <a href="welcome.html" class="go-back-button" title="Return to Welcome Page">Logout</a>
+       
+    </nav>
+    <script
+    src="https://www.chatbase.co/embed.min.js"
+    chatbotId="aMf5zj0Jbu1mDoA2mqYrV"
+    domain="www.chatbase.co"
+    defer>
+</script>
+    
+    <main>
+        <div class="section">
+            <h2>Student Management</h2>
+            <p>View students, or mark attendance.</p>
+            <a href="mark_attendence.php"><button class="button">Mark Attendance</button></a>
+            <a href="viewstudentforstu.php"><button class="button">View Student List</button></a>
+        </div>
+
+        <div class="section">
+            <h2>Room & Payment Management</h2>
+            <p>Check the availability & make payments in the hostel.</p>
+            <a href="view_rooms.php"><button class="button">Check Availability</button></a>
+           
+                
+                <button class="button" onclick="showPaymentOptions()">Payment submission</button>
+          
+        </div>
+
+        <div class="section">
+            <h2>Food Management</h2>
+            <p>Check the regular menu, add feedback, and more.</p>
+            <a href="view_regularmenuforstu.php"><button class="button">View Regular Menu</button></a>
+            <button class="button" onclick="window.location.href='add_feedback.php';">Add Feedback</button>
+        </div>
+
+        <div class="section">
+            <h2>Additional Services</h2>
+            <p>Access services like laundry, viewing special menu.</p>
+            <button class="button" onclick="window.location.href='book_laundry.php';">Laundry</button>
+            <a href="view_menuforstudents.php"><button class="button">View Special Menu</button></a>
+        </div>
+
+       
+    </main>
+
+    
+
+    <div id="paymentModal">
+        <div class="modal-content">
+            <h3>Direct Bank Transfer</h3>
+            <p>Use the following details to make your payment:</p>
+            <ul>
+                <li><strong>Bank Name:</strong> ABC Bank</li>
+                <li><strong>Account Name:</strong> Hostel Management</li>
+                <li><strong>Account Number:</strong> 1234567890</li>
+                <li><strong>IFSC Code:</strong> ABCD0123456</li>
+            </ul>
+            <p><strong>Note:</strong> Use your Student ID as the reference.</p>
+            <h3>Confirm Your Payment</h3>
+            <form action="confirm_payment.php" method="post">
+                <label for="student_id">Student ID:</label>
+                <input type="text" id="student_id" name="student_id" placeholder="Enter your Student ID" required>
+                <label for="payment_reference">Transaction Reference:</label>
+                <input type="text" id="payment_reference" name="payment_reference" placeholder="Enter the transaction reference" required>
+                <label for="amount">Amount Paid:</label>
+                <input type="number" id="amount" name="amount" placeholder="Enter amount paid" required>
+                <button type="submit" class="button">Submit</button>
+            </form>
+            <button class="button" style="background-color: red; margin-top: 15px;" onclick="closePaymentOptions()">Cancel</button>
+        </div>
+    </div>
+
+    <script>
+        function showPaymentOptions() {
+            document.getElementById('paymentModal').style.display = 'flex';
+        }
+
+        function closePaymentOptions() {
+            document.getElementById('paymentModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Call</title>
+    <link rel="stylesheet" href="video.css">
+</head>
+<body>
+    <!-- Initial Screen -->
+    <div id="initial-screen" class="screen">
+        <h1>Video Call</h1>
+        <button id="create-meeting">Create Meeting</button>
+        <input type="text" id="meeting-id-input" placeholder="Enter Meeting ID">
+        <button id="join-meeting">Join Meeting</button>
+    </div>
+
+    <!-- Meeting Screen -->
+    <div id="video-screen" class="screen hidden">
+        <div id="meeting-info">
+            <span id="meeting-id-display">Meeting ID: </span>
+            <button id="copy-link">Copy Link</button>
+        </div>
+        <div id="video-container">
+            <video id="remote-video" autoplay></video>
+            <video id="local-video" autoplay muted></video>
+        </div>
+        <div id="controls">
+            <button id="toggle-mic">Mic On</button>
+            <button id="toggle-camera">Camera On</button>
+            <button id="end-call">End Call</button>
+        </div>
+        <div id="chat-container">
+            <h3>Chat</h3>
+            <div id="chat-messages"></div>
+            <input type="text" id="chat-input" placeholder="Type a message..." />
+            <button id="send-chat">Send</button>
+        </div>
+    </div>
+
+    <script src="video.js"></script>
+</body>
+</html>
